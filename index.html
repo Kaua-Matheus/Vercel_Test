@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contador</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+    }
+
+    .container {
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      width: 320px;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    #contador {
+      font-size: 64px;
+      font-weight: bold;
+      color: #2a5298;
+      margin-bottom: 30px;
+    }
+
+    .botoes {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    button {
+      padding: 12px 20px;
+      border: none;
+      border-radius: 10px;
+      font-size: 18px;
+      cursor: pointer;
+      transition: 0.2s;
+      color: white;
+    }
+
+    .menos {
+      background: #e74c3c;
+    }
+
+    .reset {
+      background: #7f8c8d;
+    }
+
+    .mais {
+      background: #27ae60;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+      opacity: 0.9;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Contador</h1>
+
+    <div id="contador">0</div>
+
+    <div class="botoes">
+      <button class="menos" onclick="diminuir()">-</button>
+      <button class="reset" onclick="resetar()">Reset</button>
+      <button class="mais" onclick="aumentar()">+</button>
+    </div>
+  </div>
+
+  <script>
+    let valor = 0;
+
+    const contador = document.getElementById("contador");
+
+    function atualizar() {
+      contador.textContent = valor;
+    }
+
+    function aumentar() {
+      valor++;
+      atualizar();
+    }
+
+    function diminuir() {
+      valor--;
+      atualizar();
+    }
+
+    function resetar() {
+      valor = 0;
+      atualizar();
+    }
+  </script>
+</body>
+</html>
